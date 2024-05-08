@@ -1,0 +1,10 @@
+{
+    "gemma2B": "yatharth97/yatharth-gemma-2b-it-10k-v2",
+    "gemma7B": "yatharth97/yatharth-gemma-7b-it-10k",
+    "llama27B": "gmh98/llama-2-7b-chat-yatharth-v4",
+    "t5Base10K": "yatharth97/T5-base-10K-summarization",
+    "t5Large10K": "yatharth97/T5-large-10K-summarization",
+    "t5BaseNews": "yatharth97/T5-base-news-summarization",
+    "t5BartNews": "yatharth97/bart-base-news-summarization",
+    "t5BaseAnnual": "Kgr20/AnnualSummarizer"
+}

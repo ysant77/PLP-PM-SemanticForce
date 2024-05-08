@@ -1,18 +1,96 @@
-Steps to run the code:
 
-1. Make sure to add the model names with apt name in model_names_mapping.json file.
-2. Preferably use the smallest models (for ex: gemma-2b in case of chatbot, t5 base for 10k summarization) to save memory.
-3. Run the file chatbot_inference.py to get the system running.
+# SystemCode Structure
 
-Steps to Integrate new functionalities:
+## Directory Layout
+```
+SystemCode/
+│
+├── requirements.txt
+│
+├── Frontend/
+│   └── app.py
+│
+└── Backend/
+    ├── .config/
+    ├── .data/
+    ├── .models/
+    ├── .PDF_files/
+    ├── .RAG/
+    ├── .results/
+    ├── chatbot_inference.py
+    ├── constants.py
+    ├── gemma_inference.py
+    ├── info_extraction_llama.py
+    ├── news_extraction_sentiment.py
+    ├── persistence.py
+    ├── README.md (obsolete)
+    ├── summarization_inference_10k.py
+    ├── summarization_inference_annual.py
+    └── utils.py
 
-1. Refer to the dataset: https://huggingface.co/datasets/yatharth97/10k_reports_gemma, for more information about the user query and assistant
-response.
+Dataset
+│
+├── BofA Annual Report.pdf
+└── Apple 10K Report.pdf
 
-2. For ex if model's response is: document_upload:10K:General Motors Company:2023, then the action here is to store the PDF report uploaded by user in the path: CWD/data/10k/General Motors Company. This folder would then contain the PDF file and the faiss vector database.
+Test_Script.txt
+README.md
+```
 
-3. If the response is: information_extraction:Total Debt:General Motors Company:2023, then the info_extraction_llama.py would be called with appropriate report data and can be used for Question Answering on the document.
+## Brief Description
+The `app.py` in the Frontend directory serves as both the main script and the webpage design. User prompts to the chatbot trigger model inferencing like the various T5 models for different tasks.
 
-4. For the follow up type question, LLM is supposed to answer based on it's previous cached response and the knowledge it has a context.
+The Dataset folder contains financial report to test on the model and the Test_Script file contains user prompts to send to the chatbot to try.
 
-5. For the summarization question, depending on the content to be summarized (10K/financial report/news), the appropriate model is picked and passed on the TextSummarizer class in summarization_inference.py
+## Instructions on How to Run the Code
+
+1. Navigate to the SystemCode directory:
+   ```bash
+   cd SystemCode/
+   ```
+2. Install required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Set up Gemini API token in `Backend/RAG/.env`:
+   - [Gemini](https://aistudio.google.com/app/u/2/apikey)
+
+4. Set up HuggingFace token in `Backend/config/secrets.ini`:
+   - [HuggingFace](https://huggingface.co/)
+
+5. Download the models' weights from [Google Drive](https://drive.google.com/drive/folders/1I9MA1rGogT5JfJ14fcmBfsJhq3eIqnnK), unzip and upload to `Backend/models/`.
+
+6. Make sure to add the model names with apt name in Backend/config/model_names_mapping.json file.
+
+7. Preferably use the smallest models (for ex: gemma-2b in case of chatbot, t5 base for 10k summarization) to save memory.
+    For chatbot use the Llamm2 model (do not change this for now)
+
+8. Run the application:
+   ```bash
+   streamlit run Frontend/app.py
+   ```
+
+
+## Steps to Integrate new functionalities:
+
+1. Add the corresponding model name and hugging face model name in Backend/config/model_names_mapping.json
+
+2. information_extraction works only for PDF based files (10K and Annual report)
+
+3. Based on fine tuning of llama2 model, add the if else corresponding to output using subsystems_integration function.
+
+4. Dataset can be referred here: https://huggingface.co/datasets/yatharth97/PLP_llama2_v1
+
+## System Requirements
+
+- **RAM**: Minimum of 32GB required to run the Llama2-7b and T5 models
+
+## Additional Resources
+
+- **Llama2 Model**: Check out the Llama2-7b model [here](https://huggingface.co/gmh98/llama-2-7b-chat-yatharth-v4).
+- **Dataset**: The dataset used to fine-tune the Llama2-7b model is available [here](https://huggingface.co/datasets/yatharth97/PLP_llama2_v1).
+- **T5 Base Model For 10K Report Summarization**: Check out the T5 model [here](https://huggingface.co/yatharth97/T5-base-10K-summarization).
+- **T5 Base Model For Annual Report Summarization**: Check out the T5 model [here](https://huggingface.co/Kgr20/AnnualSummarizer).
+- **T5 Base Model For News Sentiment Analysis**: Check out the T5 model [here](https://huggingface.co/yatharth97/T5-base-news-summarization).
+
+

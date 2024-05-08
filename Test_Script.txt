@@ -1,0 +1,11 @@
+doc_10k_query = "Hey, I have just uploaded the 10k report for Apple for 2023."
+info_10k_query_1 = "I'm looking to find out the Total Assets for Apple in 2023, could you help with that?"
+summary_10K_query = "Summarize the 10k report for Apple for 2023 for me."
+news_fetch_and_summarize_query = "I need a summary of the news related to Apple near the date 2024. Could you collect and summarize this information for me?"
+news_sentiment_query = "Are people generally feeling optimistic or pessimistic about Apple after the latest news?"
+rag_query_1 = 'Give me the timeline of the history of Apple'
+rag_query_2 = "Who are the founders of Apple?"
+
+doc_annual_query = "Hey, I have just uploaded the Annual report for Bank of America for 2023."
+info_annual_query_1 = "What is the expense savings for Bank of America in the year 2023?"
+summary_annual_query = "Could you condense the annual report for Bank of America for 2023 into its key highlights for me?"

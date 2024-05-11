@@ -7,6 +7,13 @@ SystemCode/
 │
 ├── requirements.txt
 │
+├── ModelTraining/
+│   ├── .10K_reports/
+│   ├── Fine_tune_Llama_2_in_Google_Colab_Final.ipynb
+│   ├── News_data_training_Gemini.ipynb
+│   ├── News_summarization_fine_tuning_T5.ipynb
+│   └── document_QA_news.ipynb
+│
 ├── Frontend/
 │   └── app.py
 │
@@ -32,6 +39,16 @@ Dataset
 │
 ├── BofA Annual Report.pdf
 └── Apple 10K Report.pdf
+
+Presentation Video
+│
+├── PLP Technical Slides.pdf
+└── readme.md
+
+Project Report
+│
+├── Grp 1 PLP Porject Report.pdf
+└── readme.md
 
 Test_Script.txt
 README.md

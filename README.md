@@ -81,6 +81,10 @@ The Dataset folder contains financial report to test on the model and the Test_S
 
 4. Dataset can be referred here: https://huggingface.co/datasets/yatharth97/PLP_llama2_v1
 
+## Reference code for dataset generation and model training
+
+- Model training code is given in the SystemCode/ModelTraining folder.
+
 ## System Requirements
 
 - **RAM**: Minimum of 32GB required to run the Llama2-7b and T5 models

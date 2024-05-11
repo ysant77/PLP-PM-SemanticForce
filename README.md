@@ -58,7 +58,7 @@ The Dataset folder contains financial report to test on the model and the Test_S
 4. Set up HuggingFace token in `Backend/config/secrets.ini`:
    - [HuggingFace](https://huggingface.co/)
 
-5. Download the models' weights from [Google Drive](https://drive.google.com/drive/folders/1I9MA1rGogT5JfJ14fcmBfsJhq3eIqnnK), unzip and upload to `Backend/models/`.
+5. Download the models' weights from [Google Drive](https://drive.google.com/file/d/1Pjg4JFzGy0g_pbf4-t1m823epq9R_CZ1/view?usp=drive_link), unzip and upload to `Backend/models/`.
 
 6. Make sure to add the model names with apt name in Backend/config/model_names_mapping.json file.
 

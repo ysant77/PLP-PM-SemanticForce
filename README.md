@@ -12,6 +12,7 @@ SystemCode/
 │   ├── Fine_tune_Llama_2_in_Google_Colab_Final.ipynb
 │   ├── News_data_training_Gemini.ipynb
 │   ├── News_summarization_fine_tuning_T5.ipynb
+│   ├── Annual_report_summarization_Fine_tuning_T5.ipynb
 │   └── document_QA_news.ipynb
 │
 ├── Frontend/
